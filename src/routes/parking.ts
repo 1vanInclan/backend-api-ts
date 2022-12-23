@@ -65,4 +65,17 @@ router.post('/', (req, res) => {
 
 })
 
+router.delete('/delete/:id', (req, res) => {
+
+    try {
+        const parkingDelete = parkingServices.deleteById(+req.params.id);
+        res.json(parkingDelete);
+    } catch (e: any) {
+        res.status(400).send(e.message)
+    }
+
+
+})
+
+
 export default router;
