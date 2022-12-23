@@ -1,0 +1,47 @@
+[
+    {
+        "Id": 1,
+        "Address": "Street A #35, California, CA",
+        "Amenities": [
+            "camaras",
+            "seguridad",
+            "cajon_techado"
+        ],
+        "Score": 5,
+        "Price": 100,
+        "Type": "public",
+        "Images": [],
+        "Description": "dwedscdvcdsvsdv"
+    },
+    {
+        "Id": 2,
+        "Address": "Street B #27, California, CA",
+        "Amenities": [
+            "camaras",
+            "seguridad",
+            "estacionamiento_cerrado",
+            "planta_baja"
+        ],
+        "Score": 5,
+        "Price": 175,
+        "Type": "private",
+        "Images": [],
+        "Description": "dwedscdvcdsvsdv"
+    },
+    {
+        "Id": 3,
+        "Address": "Street C #7, California, CA",
+        "Amenities": [
+            "camaras",
+            "seguridad",
+            "departamento",
+            "cajon_techado",
+            "planta_baja"
+        ],
+        "Score": 5,
+        "Price": 200,
+        "Type": "public",
+        "Images": [],
+        "Description": "dwedscdvcdsvsdv"
+    }
+]
