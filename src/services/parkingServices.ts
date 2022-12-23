@@ -125,8 +125,6 @@ export const addParking = (newParkingEntry: newParkingEntry): ParkingEntry => {
 export const deleteById = (id: number): ParkingEntry[] | undefined => {
     const parking = parkings.filter(p => p.Id === id);
     const deleteParking = parkings.findIndex(p => p.Id === id);
-
-    parkings.splice(deleteParking,1);
-        
+    parkings.splice(deleteParking,1);        
     return parking;
 }
