@@ -30,6 +30,87 @@ export const filterByAmenie= (amenie: string): ParkingEntry [] | undefined => {
     return entry;
 }
 
+export const filter= (amenie : string | undefined, type : string | undefined, max: string | undefined, min: string | undefined): ParkingEntry [] |  undefined => {
+
+    if (amenie && type && max && min){
+        return undefined;
+    }
+    if (amenie && type && max){
+        const entry = parkings.filter( (p) => p.Amenities.includes(amenie.toLocaleLowerCase()) && p.Type === type)
+        if(entry.length === 0) {
+            return undefined
+        }
+        const order = entry.sort( (a,b) => b.Price - a.Price );
+        return order;
+        
+    }
+    if (amenie && type && min){
+        const entry = parkings.filter( (p) => p.Amenities.includes(amenie.toLocaleLowerCase()) && p.Type === type)
+        if(entry.length === 0) {
+            return undefined
+        }
+        const order = entry.sort( (a,b) => a.Price - b.Price )
+        return order;
+    }
+    if (amenie && type){
+        const entry = parkings.filter( (p) => p.Amenities.includes(amenie.toLocaleLowerCase()) && p.Type === type)
+        if(entry.length === 0) {
+            return undefined
+        }
+        return entry;
+    }
+    if (amenie && min){
+        const entry = parkings.filter( (p) => p.Amenities.includes(amenie.toLocaleLowerCase()) )
+        if(entry.length === 0) {
+            return undefined
+        }
+        const order = entry.sort( (a,b) => a.Price - b.Price )
+        return order;
+    }
+    if (amenie && max){
+        const entry = parkings.filter( (p) => p.Amenities.includes(amenie.toLocaleLowerCase()) )
+        if(entry.length === 0) {
+            return undefined
+        }
+        const order = entry.sort( (a,b) => b.Price - a.Price )
+        return order;
+    }
+    if (type && min){
+        const entry = parkings.filter( p => p.Type === type)
+        if(entry.length === 0) {
+            return undefined
+        }
+        const order = entry.sort( (a,b) => a.Price - b.Price )
+        return order;
+    }
+    if (type && max){
+        const entry = parkings.filter( p => p.Type === type)
+        if(entry.length === 0) {
+            return undefined
+        }
+        const order = entry.sort( (a,b) => b.Price - a.Price )
+        return order;
+    }
+    if(amenie){
+        const entry = parkings.filter( (p) => p.Amenities.includes(amenie.toLocaleLowerCase()) )
+        if(entry.length === 0) {
+            return undefined
+        }
+        return entry;
+    }
+
+    if (type){
+        const entry = parkings.filter( p => p.Type === type);
+        if(entry.length === 0) {
+            return undefined
+        }
+        return entry;
+    }   
+
+
+    return undefined; 
+}
+
 
 export const addParking = (newParkingEntry: newParkingEntry): ParkingEntry => {
     const newParking = {

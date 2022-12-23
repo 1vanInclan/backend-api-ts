@@ -48,6 +48,21 @@ router.get('/amenie/:amenie', (req, res) => {
    
 })
 
+router.get('/search/params', (req, res) => {
+
+    const amenie = req.query.amenie?.toString(); 
+    const type = req.query.type?.toString();
+    const max = req.query.max?.toString();
+    const min = req.query.min?.toString();
+
+
+    const parking = parkingServices.filter(amenie, type, max, min);
+    return (parking != null)
+    ?   res.send(parking)
+    :   res.send(404)
+   
+})
+
 router.post('/', (req, res) => {
 
     try {
