@@ -1,7 +1,15 @@
 [
     {
         "Id": 1,
-        "Address": "Street A #35, California, CA",
+        "Name": "Parking A",
+        "Address": 
+            {
+                "Calle": "Street A",
+                "Numero": 35,
+                "Estado": "California",
+                "Estado_Abreviado": "CA" 
+            }
+        ,
         "Amenities": [
             "camaras",
             "seguridad",
@@ -15,7 +23,15 @@
     },
     {
         "Id": 2,
-        "Address": "Street B #27, California, CA",
+        "Name": "Parking B",
+        "Address": 
+            {
+                "Calle": "Street B",
+                "Numero": 27,
+                "Estado": "California",
+                "Estado_Abreviado": "CA" 
+            }
+        ,
         "Amenities": [
             "camaras",
             "seguridad",
@@ -30,7 +46,14 @@
     },
     {
         "Id": 3,
-        "Address": "Street C #7, California, CA",
+        "Name": "Parking C",
+        "Address": 
+            {
+                "Calle": "Street C",
+                "Numero": 7,
+                "Estado": "California",
+                "Estado_Abreviado": "CA" 
+            },
         "Amenities": [
             "camaras",
             "seguridad",

@@ -1,8 +1,17 @@
 import { newParkingEntry } from "./types";
 
-const parseAddress = (addressFromRequest: any): string =>  {
-    if (!isString(addressFromRequest)){
-        throw new Error('Incorrect or missing Address')
+
+const parseName = (nameFromRequest: any): string =>  {
+    if (!isString(nameFromRequest)){
+        throw new Error('Incorrect or missing Type')
+    }
+
+    return nameFromRequest;
+}
+
+const parseAddress = (addressFromRequest: Object): any =>  {
+    if( !isObject(addressFromRequest) ){
+        throw new Error('Incorrect or missing Image')
     }
 
     return addressFromRequest;
@@ -69,9 +78,14 @@ const isArrayString = ( array: string[] ): boolean => {
     return array.every((a) => typeof a === "string");
 }
 
+const isObject = ( obj: Object ): boolean => {
+    return typeof obj === 'object';
+}
+
 const toNewParkingEntry = (object: any): newParkingEntry => {
 
     const newEntry: newParkingEntry = {
+        Name: parseName(object.Name),
         Address: parseAddress(object.Address),
         Amenities: parseAmenities(object.Amenities),
         Score: parseScore(object.Score),
